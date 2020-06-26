@@ -31,8 +31,5 @@ class TestApiServer(unittest.TestCase):
     result = resp.get_data().decode('utf-8')
     self.assertEqual(result, '[1, 2, 3, 5, 6, 10, 15, 25, 30, 50, 75, 150]')
 
-  def test_intentional_failure(self):
-    self.assertEqual(0, 1)
-
 if __name__ == '__main__':
   unittest.main()
