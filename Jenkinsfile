@@ -27,6 +27,7 @@ node {
 
             sh """ssh -tt ubuntu@ec2-3-14-146-99.us-east-2.compute.amazonaws.com << EOF
                  docker stop python-apiserver || true && docker rm python-apiserver || true
+                 docker pull pgbhole/python-apiserver
                  docker run --name python-apiserver --rm -d -p 5000:5000 pgbhole/python-apiserver
                  #TODO: Wait for container to run and the check status
                  exit
