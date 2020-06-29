@@ -35,7 +35,7 @@ def fibonacci():
 	count = get_number(count)
 	if count is None:
 		return "Expected named parameter 'count'", 400
-	if count > 1000:
+	if count > 100:
 		return "count parameter should be < 5000", 400
 	return str(_fibonacci_list(count))
 
