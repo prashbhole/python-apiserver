@@ -23,9 +23,9 @@ node {
     }
 
     stage('Deploy image') {
-        sshagent (credentials: ['ec2-3-14-146-99.us-east-2']) {
+        sshagent (credentials: ['ec2-18-188-226-162.us-east-2']) {
 
-            sh """ssh -tt ubuntu@ec2-3-14-146-99.us-east-2.compute.amazonaws.com << EOF
+            sh """ssh -tt ubuntu@ec2-18-188-226-162.us-east-2.compute.amazonaws.com << EOF
                  docker stop python-apiserver || true && docker rm python-apiserver || true
                  docker pull pgbhole/python-apiserver
                  docker run --name python-apiserver --rm -d -p 5000:5000 pgbhole/python-apiserver
